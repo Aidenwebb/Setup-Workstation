@@ -97,3 +97,4 @@ fedora_packages__packages:
   - vinagre
   - weechat
   - xsel
+  - zsh
