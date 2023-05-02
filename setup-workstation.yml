@@ -12,7 +12,7 @@
         - github
         - zsh-autosuggestions
         - zsh-syntax-highlighting
-      users: 
+      users:
         - username: "{{ ansible_user_id }}"
         - username: root
     - dotfiles

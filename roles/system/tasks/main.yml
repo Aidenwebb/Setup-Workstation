@@ -1,18 +1,18 @@
 ---
 - name: Install and update man-db and mlocate
   become: true
-  dnf: 
+  ansible.builtin.dnf:
     name: man-db, mlocate
     state: present
 
 - name: Rebuild man cache
   become: true
-  command: /usr/bin/mandb
+  ansible.builtin.command: /usr/bin/mandb
   register: result_mandb
   changed_when: false
 
 - name: Update mlocate database
   become: true
-  command: /usr/sbin/updatedb
+  ansible.builtin.command: /usr/sbin/updatedb
   register: result_updatedb
   changed_when: false

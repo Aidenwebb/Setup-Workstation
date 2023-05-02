@@ -1,13 +1,13 @@
 ---
-- name: link zshrc.custom
-  file:
-    src: "{{ansible_user_dir}}/rcfiles/zshrc.custom"
-    dest: "{{ansible_user_dir}}/.zshrc.custom"
+- name: Link zshrc.custom
+  ansible.builtin.file:
+    src: "{{ ansible_user_dir }}/rcfiles/zshrc.custom"
+    dest: "{{ ansible_user_dir }}/.zshrc.custom"
     state: link
 
 - name: Source .zshrc.custom in .zshrc
   ansible.builtin.lineinfile:
-    path: "{{ansible_user_dir}}/.zshrc"
-    regexp: '^source {{ansible_user_dir}}/.zshrc.custom$'
-    line: 'source {{ansible_user_dir}}/.zshrc.custom'
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^source {{ ansible_user_dir }}/.zshrc.custom$'
+    line: 'source {{ ansible_user_dir }}/.zshrc.custom'
     state: present

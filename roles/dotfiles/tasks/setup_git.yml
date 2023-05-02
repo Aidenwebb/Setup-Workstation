@@ -35,7 +35,7 @@
 #     state: present
 
 - name: Download dotfiles repo
-  git:
+  ansible.builtin.git:
     repo: "{{ dotfiles__repo }}"
     dest: "{{ ansible_user_dir }}/rcfiles"
 
@@ -62,8 +62,8 @@
     dest: "{{ ansible_user_dir }}/.gitconfig-default"
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_id }}"
-    mode: 0644
-  when: stat_gitconfig_user.stat.exists == false
+    mode: "0644"
+  when: not stat_gitconfig_user.stat.exists
 
 - name: Check if .gitconfig-work already exists
   ansible.builtin.stat:
@@ -76,5 +76,5 @@
     dest: "{{ ansible_user_dir }}/.gitconfig-work"
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_id }}"
-    mode: 0644
-  when: stat_gitconfig_work.stat.exists == false
+    mode: "0644"
+  when: not stat_gitconfig_work.stat.exists

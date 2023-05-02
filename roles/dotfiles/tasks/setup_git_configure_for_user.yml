@@ -19,4 +19,3 @@
   ansible.builtin.set_fact:
     user_git_email: "{{ prompt.user_input | default(dotfiles__default_user_git_email, true) }}"
   when: user_git_email is not defined or user_git_email == ""
-
