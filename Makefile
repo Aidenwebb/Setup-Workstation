@@ -12,3 +12,7 @@ v-destroy:
 
 lint:
 	ansible-lint
+
+install-depends:
+	@sh ./scripts/setup-ansible.sh
+	ansible-playbook setup-workstation.yml
