@@ -14,10 +14,9 @@
 - name: Install System Packages
   become: true
   dnf:
-    name: "{{ item }}"
+    name: "{{ fedora_packages__packages }}"
     state: latest
     update_cache: true
-  loop: "{{ fedora_packages__packages }}"
 
 - import_tasks: google-chrome.yml
 - import_tasks: vs-code.yml
