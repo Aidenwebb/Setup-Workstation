@@ -1,4 +1,8 @@
 ---
+
+- name: Setup Work Folders
+  ansible.builtin.import_tasks: setup_workfolders.yml
+
 - name: Setup Git
   ansible.builtin.import_tasks: setup_git.yml
 

@@ -1,0 +1,24 @@
+---
+- name: Create Data directory
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/data"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0755
+
+- name: Create Projects directory
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/projects"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0755
+
+- name: Create Work directory
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/work"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0755
