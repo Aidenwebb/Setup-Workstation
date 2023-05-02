@@ -15,8 +15,10 @@ Vagrant.configure("2") do |config|
     workstation.vm.provision "ansible" do |ansible|
       ansible.playbook = "setup-workstation.yml"
       ansible.extra_vars = {
-        user_git_username: "John Doe",
-        user_git_email: "johndoe@johndoe.com"
+        user_git_name: "User John Doe",
+        user_git_email: "user_johndoe@johndoe.com",
+        work_git_name: "Work Jane Doe",
+        work_git_email: "work_janedoe@janedoe.com"
     }
     end
   end
