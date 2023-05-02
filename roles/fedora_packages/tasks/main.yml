@@ -1,22 +1,25 @@
 ---
 - name: Install distribution-gpg-keys
   become: true
-  dnf:
+  ansible.builtin.dnf:
     name: distribution-gpg-keys
     state: present
 
 - name: Install fedora-workstation-repositories
   become: true
-  dnf:
+  ansible.builtin.dnf:
     name: fedora-workstation-repositories
     state: present
 
 - name: Install System Packages
   become: true
-  dnf:
+  ansible.builtin.dnf:
     name: "{{ fedora_packages__packages }}"
     state: latest
     update_cache: true
 
-- import_tasks: google-chrome.yml
-- import_tasks: vs-code.yml
+- name: Install Google Chrome
+  ansible.builtin.import_tasks: google-chrome.yml
+
+- name: Install VS Code
+  ansible.builtin.import_tasks: vs-code.yml

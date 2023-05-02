@@ -1,5 +1,5 @@
 ---
-- name: set mydistribution fact
+- name: Set mydistribution fact
   ansible.builtin.set_fact:
     mydistribution: "{{ 'rhel' if (ansible_distribution == 'Red Hat Enterprise Linux') else (ansible_distribution | lower) }}"
 
