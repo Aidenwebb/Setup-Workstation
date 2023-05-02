@@ -1,0 +1,3 @@
+dotfiles__default_user_git_email: "{{ ansible_user_id }}@{{ ansible_hostname }}"
+dotfiles__default_work_git_email: "{{ ansible_user_id }}@{{ ansible_hostname }}"
+dotfiles__repo: "https://github.com/Aidenwebb/rcfiles.git"

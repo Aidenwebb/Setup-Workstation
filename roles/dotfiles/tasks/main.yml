@@ -1,0 +1,3 @@
+---
+- name: Setup Git
+  ansible.builtin.import_tasks: setup_git.yml

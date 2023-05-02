@@ -1,4 +1,6 @@
 ---
-- hosts: all
+- name: Setup workstation
+  hosts: all
   roles:
     - fedora_packages
+    - dotfiles

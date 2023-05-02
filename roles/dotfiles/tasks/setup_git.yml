@@ -1,0 +1,80 @@
+- name: Configure Git for User
+  ansible.builtin.import_tasks: setup_git_configure_for_user.yml
+
+- name: Configure Git for Work
+  ansible.builtin.import_tasks: setup_git_configure_for_work.yml
+
+- name: Debug user_git_name
+  ansible.builtin.debug:
+    msg: "{{ user_git_name }}"
+
+- name: Debug user_git_email
+  ansible.builtin.debug:
+    msg: "{{ user_git_email }}"
+
+- name: Debug work_git_name
+  ansible.builtin.debug:
+    msg: "{{ work_git_name }}"
+
+- name: Debug work_git_email
+  ansible.builtin.debug:
+    msg: "{{ work_git_email }}"
+
+# - name: Add Github RSA to known hosts
+#   ansible.builtin.known_hosts:
+#     name: github.com
+#     key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+#     path: ~/.ssh/known_hosts
+#     state: present
+
+# - name: Add Github ED25519 to known hosts
+#   ansible.builtin.known_hosts:
+#     name: github.com
+#     key: "{{ lookup('pipe', 'ssh-keyscan -t ed25519 github.com') }}"
+#     path: ~/.ssh/known_hosts
+#     state: present
+
+- name: Download dotfiles repo
+  git:
+    repo: "{{ dotfiles__repo }}"
+    dest: "{{ ansible_user_dir }}/rcfiles"
+
+- name: Link gitexcludes
+  ansible.builtin.file:
+    src: "{{ ansible_user_dir }}/rcfiles/git/dot_gitexcludes"
+    dest: "{{ ansible_user_dir }}/.gitexcludes"
+    state: link
+
+- name: Link gitconfig
+  ansible.builtin.file:
+    src: "{{ ansible_user_dir }}/rcfiles/git/dot_gitconfig"
+    dest: "{{ ansible_user_dir }}/.gitconfig"
+    state: link
+
+- name: Check if .gitconfig-default already exists
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.gitconfig-default"
+  register: stat_gitconfig_user
+
+- name: Template .gitconfig-default
+  ansible.builtin.template:
+    src: gitconfig-default.j2
+    dest: "{{ ansible_user_dir }}/.gitconfig-default"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0644
+  when: stat_gitconfig_user.stat.exists == false
+
+- name: Check if .gitconfig-work already exists
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.gitconfig-work"
+  register: stat_gitconfig_work
+
+- name: Template .gitconfig-work
+  ansible.builtin.template:
+    src: gitconfig-work.j2
+    dest: "{{ ansible_user_dir }}/.gitconfig-work"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0644
+  when: stat_gitconfig_work.stat.exists == false

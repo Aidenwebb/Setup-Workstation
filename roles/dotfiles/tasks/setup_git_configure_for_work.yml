@@ -1,0 +1,21 @@
+- name: Get username for git (Work Config)
+  ansible.builtin.pause:
+    prompt: "(Work Config) - Enter your username for git: "
+  register: prompt
+  when: work_git_name is not defined or work_git_name == ""
+
+- name: Set username fact for git (Work Config)
+  ansible.builtin.set_fact:
+    work_git_name: "{{ prompt.user_input | default(ansible_user_id, true) }}"
+  when: work_git_name is not defined or work_git_name == ""
+
+- name: Get email for git (Work Config)
+  ansible.builtin.pause:
+    prompt: "(Work Config) - Enter your email for git"
+  register: prompt
+  when: work_git_email is not defined or work_git_email == ""
+
+- name: Set email fact for git (Work Config)
+  ansible.builtin.set_fact:
+    work_git_email: "{{ prompt.user_input | default(dotfiles__default_work_git_email, true) }}"
+  when: work_git_email is not defined or work_git_email == ""
