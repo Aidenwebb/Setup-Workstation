@@ -1,0 +1,32 @@
+# .gitignore
+
+# Vagrant files and directories
+.vagrant/
+*.vagrantuser
+*.vbox-prev
+
+# Ansible retry files
+*.retry
+
+# Ansible Vault files
+*.vault
+
+# Ignore temporary files created by editors
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore files created by macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Ignore files created by Windows
+Thumbs.db
+Desktop.ini
+
+# Ignore files created by Linux
+.Trash-*
