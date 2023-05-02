@@ -3,4 +3,15 @@
   hosts: all
   roles:
     - fedora_packages
+    - role: gantsign.oh-my-zsh
+      plugins:
+        - docker
+        - docker-compose
+        - kube-ps1
+        - git
+        - github
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
+      users: 
+        - username: "{{ ansible_user_id }}"
     - dotfiles
