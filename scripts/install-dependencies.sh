@@ -10,4 +10,4 @@ ansible-galaxy install gantsign.oh-my-zsh
 
 # Install gnumake
 
-dnf -y install make
+sudo dnf -y install make
