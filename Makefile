@@ -17,4 +17,4 @@ install-depends:
 	@sh ./scripts/install-dependencies.sh
 
 install:
-	ansible-playbook setup-workstation.yml
+	ansible-playbook setup-workstation.yml -k
