@@ -7,3 +7,7 @@ python3 get-pip.py --user
 # Install Ansible
 python3 -m pip install --user ansible
 ansible-galaxy install gantsign.oh-my-zsh
+
+# Install gnumake
+
+dnf -y install make

@@ -14,5 +14,5 @@ lint:
 	ansible-lint
 
 install-depends:
-	@sh ./scripts/setup-ansible.sh
+	@sh ./scripts/install-dependencies.sh
 	ansible-playbook setup-workstation.yml
