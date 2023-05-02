@@ -1,0 +1,20 @@
+---
+- name: Import Visual Studio Code signing key
+  become: true
+  rpm_key:
+    key: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add Visual Studio Code repository into repo.d list
+  become: true
+  yum_repository:
+    name: vscode
+    description: Visual Studio Code repo
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+
+- name: Install Visual Studio Code
+  become: true
+  yum:
+    name: "code"
+    state: latest
+    update_cache: true

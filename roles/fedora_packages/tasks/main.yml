@@ -1,0 +1,23 @@
+---
+- name: Install distribution-gpg-keys
+  become: true
+  dnf:
+    name: distribution-gpg-keys
+    state: present
+
+- name: Install fedora-workstation-repositories
+  become: true
+  dnf:
+    name: fedora-workstation-repositories
+    state: present
+
+- name: Install System Packages
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop: "{{ fedora_packages__packages }}"
+
+- import_tasks: google-chrome.yml
+- import_tasks: vs-code.yml
