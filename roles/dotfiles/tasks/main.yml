@@ -1,3 +1,10 @@
 ---
 - name: Setup Git
   ansible.builtin.import_tasks: setup_git.yml
+
+- name: link zshrc.custom
+  file:
+    src: "{{ansible_user_dir}}/rcfiles/zshrc.custom"
+    dest: "{{ansible_user_dir}}/.zshrc.custom"
+    state: link
+
