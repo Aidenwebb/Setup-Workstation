@@ -31,4 +31,7 @@
 - [ ] Install configurations
   - [X] ZSH
   - [X] Git
+  - [ ] SSH
+    - [ ] Keys
+    - [ ] known_hosts
   - [ ] VS Code
