@@ -60,6 +60,7 @@ fedora_packages__packages:
   - mosh
   - neovim
   - NetworkManager-l2tp 
+  - NetworkManager-libreswan-gnome
   - nmap
   - policycoreutils-python-utils
   - pcp-system-tools
@@ -99,3 +100,7 @@ fedora_packages__packages:
   - weechat
   - xsel
   - zsh
+
+fedora_packages__flatpaks:
+  - org.ferdium.Ferdium
+  - net.devolutions.RDM

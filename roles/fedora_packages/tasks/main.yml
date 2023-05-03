@@ -23,3 +23,8 @@
 
 - name: Install VS Code
   ansible.builtin.import_tasks: vs-code.yml
+
+- name: Install Flatpaks
+  community.general.flatpak:
+    name: "{{ fedora_packages__flatpaks }}"
+    state: present
