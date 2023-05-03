@@ -106,3 +106,16 @@ fedora_packages__flatpaks:
   - org.ferdium.Ferdium
   - net.devolutions.RDM
   - org.remmina.Remmina
+  - com.jetbrains.DataGrip
+  - com.jetbrains.PyCharm-Professional
+  - com.jetbrains.Rider
+  - com.jetbrains.IntelliJ-IDEA-Ultimate
+  - com.jetbrains.GoLand
+  - org.videolan.VLC
+  - com.spotify.Client
+  - com.bitwarden.desktop
+  - md.obsidian.Obsidian
+  - com.getpostman.Postman
+  - org.filezillaproject.Filezilla
+  - com.github.debauchee.barrier
+  - com.obsproject.Studio
