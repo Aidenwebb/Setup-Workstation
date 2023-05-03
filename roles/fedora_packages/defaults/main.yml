@@ -105,3 +105,4 @@ fedora_packages__packages:
 fedora_packages__flatpaks:
   - org.ferdium.Ferdium
   - net.devolutions.RDM
+  - org.remmina.Remmina
