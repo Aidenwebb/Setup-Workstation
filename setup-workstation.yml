@@ -7,16 +7,17 @@
     - {role: 'fedora_packages', tags: 'packages' }
     - role: gantsign.oh-my-zsh
       tags: oh-my-zsh
-      plugins:
-        - docker
-        - docker-compose
-        - kube-ps1
-        - git
-        - github
-        - zsh-autosuggestions
-        - zsh-syntax-highlighting
       users:
         - username: "{{ ansible_user_id }}"
+          oh_my_zsh:
+            plugins:
+            - docker
+            - docker-compose
+            - kube-ps1
+            - git
+            - github
+            - zsh-autosuggestions
+            - zsh-syntax-highlighting
         - username: root
     - { role: 'dotfiles', tags: 'dotfiles' }
     - { role: 'system', tags: 'system' }
