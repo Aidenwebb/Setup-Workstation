@@ -41,6 +41,7 @@ fedora_packages__packages:
   - gnome-tweaks
   - htop
   - hyperfine
+  - ike-scan
   - iotop
   - irssi
   - jq
