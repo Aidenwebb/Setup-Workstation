@@ -4,3 +4,4 @@ user_git_email: "user_ johndoe@johndoe.com"
 work_git_name: "Work Jane Doe"
 work_git_email: "work_janedoe@janedoe.com"
 dotfiles__repo: "https://github.com/MyUsername/dotfiles_repo.git"
+customize_gnome__skip_restart_gnome_shell: true

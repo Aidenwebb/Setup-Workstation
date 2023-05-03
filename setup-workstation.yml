@@ -4,8 +4,9 @@
   vars_files:
     - "vars.yml"
   roles:
-    - fedora_packages
+    - {role: 'fedora_packages', tags: 'packages' }
     - role: gantsign.oh-my-zsh
+      tags: oh-my-zsh
       plugins:
         - docker
         - docker-compose
@@ -17,5 +18,10 @@
       users:
         - username: "{{ ansible_user_id }}"
         - username: root
-    - dotfiles
-    - system
+    - { role: 'dotfiles', tags: 'dotfiles' }
+    - { role: 'system', tags: 'system' }
+    - role: petermosmans.customize-gnome
+      tags: gnome
+      gnome_extensions:
+        - id: 1460
+          enable: true
