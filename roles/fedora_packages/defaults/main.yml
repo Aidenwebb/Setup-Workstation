@@ -59,6 +59,7 @@ fedora_packages__packages:
   - mutt
   - mosh
   - neovim
+  - NetworkManager-l2tp 
   - nmap
   - policycoreutils-python-utils
   - pcp-system-tools
