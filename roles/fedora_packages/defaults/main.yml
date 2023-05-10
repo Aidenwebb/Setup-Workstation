@@ -11,6 +11,7 @@ fedora_packages__packages:
   - bpftrace
   - binutils
   - bison
+  - container-selinux
   - chromium
   - clang
   - cmake
