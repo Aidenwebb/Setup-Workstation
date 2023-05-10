@@ -66,6 +66,7 @@ fedora_packages__packages:
   - NetworkManager-libreswan-gnome
   - nmap
   - edk2-ovmf
+  - pavucontrol
   - policycoreutils-python-utils
   - pcp-system-tools
   - powerline-fonts
