@@ -59,10 +59,12 @@ fedora_packages__packages:
   - meld
   - mutt
   - mosh
+  - neofetch
   - neovim
   - NetworkManager-l2tp 
   - NetworkManager-libreswan-gnome
   - nmap
+  - edk2-ovmf
   - policycoreutils-python-utils
   - pcp-system-tools
   - powerline-fonts
