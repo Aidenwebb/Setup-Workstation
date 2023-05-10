@@ -122,3 +122,4 @@ fedora_packages__flatpaks:
   - com.github.debauchee.barrier
   - com.obsproject.Studio
   - org.gnome.Extensions
+  - org.gnome.baobab
