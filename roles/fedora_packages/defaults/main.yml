@@ -43,6 +43,7 @@ fedora_packages__packages:
   - hyperfine
   - ike-scan
   - iotop
+  - inxi
   - irssi
   - jq
   - kitty
