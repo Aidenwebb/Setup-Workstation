@@ -121,3 +121,4 @@ fedora_packages__flatpaks:
   - org.filezillaproject.Filezilla
   - com.github.debauchee.barrier
   - com.obsproject.Studio
+  - org.gnome.Extensions
