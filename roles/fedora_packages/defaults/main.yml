@@ -40,6 +40,13 @@ fedora_packages__packages:
   - golang-x-tools-gopls
   - gnome-tweak-tool
   - gnome-tweaks
+  - gstreamer1-plugin-openh264
+  - gstreamer1-libav
+  - gstreamer1-plugins-bad-free-extras
+  - gstreamer1-plugins-bad-free-fluidsynth 
+  - gstreamer1-plugins-bad-free-wildmidi
+  - gstreamer1-plugins-bad-free-zbar
+  - gstreamer1-plugins-good-extras
   - htop
   - hyperfine
   - ike-scan
@@ -53,6 +60,7 @@ fedora_packages__packages:
   - kdiff3
   - kernel-devel
   - kernel-headers
+  - lame
   - libtool
   - lm_sensors
   - lsd
