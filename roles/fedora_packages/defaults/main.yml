@@ -75,6 +75,8 @@ fedora_packages__packages:
   - NetworkManager-libreswan-gnome
   - nmap
   - edk2-ovmf
+  - p7zip
+  - p7zip-plugins
   - pass
   - pavucontrol
   - policycoreutils-python-utils
