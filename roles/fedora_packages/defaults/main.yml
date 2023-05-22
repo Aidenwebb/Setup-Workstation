@@ -20,6 +20,10 @@ fedora_packages__packages:
   - curl
   - crypto-policies
   - dstat
+  - dotnet-sdk-6.0
+  - aspnetcore-runtime-6.0
+  - dotnet-sdk-7.0
+  - aspnetcore-runtime-7.0
   - emacs
   - earlyoom
   - exa
