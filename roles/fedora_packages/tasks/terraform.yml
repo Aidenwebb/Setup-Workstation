@@ -1,0 +1,16 @@
+- name: Add Terraform Repo
+  become: true
+  ansible.builtin.yum_repository:
+    name: hashicorp
+    description: Hashicorp Stable Repo
+    baseurl: https://rpm.releases.hashicorp.com/fedora/$releasever/$basearch/stable
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://rpm.releases.hashicorp.com/gpg
+
+- name: Install Terraform
+  become: true
+  ansible.builtin.dnf:
+    name: terraform
+    state: latest
+    update_cache: true

@@ -27,6 +27,9 @@
 - name: Install Git Credential Manager
   ansible.builtin.import_tasks: git-credential-manager.yml
 
+- name: Install Terraform
+  ansible.builtin.import_tasks: terraform.yml
+
 - name: Install Flatpaks
   community.general.flatpak:
     name: "{{ fedora_packages__flatpaks }}"
