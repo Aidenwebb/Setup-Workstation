@@ -51,6 +51,7 @@ fedora_packages__packages:
   - gstreamer1-plugins-bad-free-wildmidi
   - gstreamer1-plugins-bad-free-zbar
   - gstreamer1-plugins-good-extras
+  - gvfs-nfs
   - htop
   - hyperfine
   - ike-scan
