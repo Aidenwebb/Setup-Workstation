@@ -1,0 +1,29 @@
+---
+- name: Import Google YUM GPG signing key
+  become: true
+  ansible.builtin.rpm_key:
+    key: https://packages.cloud.google.com/yum/doc/yum-key.gpg
+    state: present
+
+- name: Import Google RPM signing key
+  become: true
+  ansible.builtin.rpm_key:
+    key: https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    state: present
+
+- name: Add Google Kubernetes repository into repo.d list
+  become: true
+  ansible.builtin.yum_repository:
+    name: Kubernetes
+    description: Kubernetes repository
+    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+- name: Install Kubectl
+  become: true
+  ansible.builtin.yum:
+    name: "kubectl"
+    state: latest
+    update_cache: true

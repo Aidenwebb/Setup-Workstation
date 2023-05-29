@@ -30,6 +30,9 @@
 - name: Install Terraform
   ansible.builtin.import_tasks: terraform.yml
 
+- name: Install Kubectl
+  ansible.builtin.import_tasks: kubectl.yml
+
 - name: Install Flatpaks
   community.general.flatpak:
     name: "{{ fedora_packages__flatpaks }}"
