@@ -124,6 +124,7 @@ fedora_packages__packages:
   - zsh
 
 fedora_packages__flatpaks:
+  - com.authy.Authy
   - org.ferdium.Ferdium
   - net.devolutions.RDM
   - org.remmina.Remmina
