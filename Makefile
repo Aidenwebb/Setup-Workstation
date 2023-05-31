@@ -1,6 +1,8 @@
 .POSIX:
 .PHONY: v-up v-reload v-destroy lint
 
+default: install
+
 v-up:
 	@vagrant up
 
