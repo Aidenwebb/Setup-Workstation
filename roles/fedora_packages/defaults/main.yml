@@ -125,6 +125,7 @@ fedora_packages__packages:
 
 fedora_packages__flatpaks:
   - com.authy.Authy
+  - dev.k8slens.OpenLens
   - org.ferdium.Ferdium
   - net.devolutions.RDM
   - org.remmina.Remmina
